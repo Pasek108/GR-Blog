@@ -13,6 +13,8 @@
   </div>
 <% end %>
 
-<div class="my-8 pb-8">
-  <%== pagy_nav(@pagy) %>
-</div>
+<% if @pagy.pages > 1 %>
+  <div class="my-8 pb-8">
+    <%== pagy_nav(@pagy) %>
+  </div>
+<% end %>
