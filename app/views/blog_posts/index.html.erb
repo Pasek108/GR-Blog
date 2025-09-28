@@ -1,5 +1,6 @@
 <h1>My blog</h1>
 
+<%== pagy_info(@pagy) %>
 <% @blog_posts.each do |post| %>
   <div>
     <h2><%= link_to post.title, post %></h2>
@@ -11,3 +12,7 @@
     <p><%= post.content %></p>
   </div>
 <% end %>
+
+<div class="my-8 pb-8">
+  <%== pagy_nav(@pagy) %>
+</div>
