@@ -1,0 +1,26 @@
+<%= form_with model: @blog_post do |form| %>
+  <% if form.object.errors.any? %>
+    <div>
+      <% form.object.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, autocomplete: "current-password", class: "px-2 py-1 border rounded" %>
+  </div>
+
+  <div>
+    <%= form.label :content %>
+    <%= form.rich_text_area :content, class: "px-2 py-1 border rounded" %>
+  </div>
+
+  <div>
+    <%= form.label :published_at %>
+    <%= form.datetime_field :published_at, class: "px-2 py-1 border rounded" %>
+  </div>
+
+  <%= form.button "Submit", class: "bg-gray-200 hover:bg-gray-300 px-4 py-1 rounded text-black cursor-pointer" %>
+<% end %>
